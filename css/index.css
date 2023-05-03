@@ -1,0 +1,574 @@
+@import url(common.css);
+
+html, body{
+  overflow:  auto;
+}
+
+#wrap{
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+/* 오른쪽 */
+#dot{
+  position:fixed; 
+  z-index:1000; 
+  right: 5%; 
+  top:50%;
+  transform: translateY(-50%);
+}
+#dot span{
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ee4a7b;
+  margin: 20px 0;
+  }
+
+#dot span.active{
+  display: block;
+  width: 10px;
+  height: 60px;
+  border-radius: 15px;
+  background-color: #E11451;
+  transition: 0.8s;
+}
+
+/* 메뉴 */
+
+
+header{
+  background-color: #E11451;
+  text-align: center;
+}
+
+header .fixed{
+  position: fixed;
+  width: 300px;
+}
+
+header h1{  /* 로고 */
+  font-size: 28px;
+  margin: 50px 0 ;
+  color: #444;
+  line-height: 60px;
+}
+
+header h1 mark{
+  font-size: 40px;
+  color: #E11451;
+  background-color: aquamarine;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+header h1:hover mark{
+  filter: invert(1);
+}
+
+
+header ul#gnb{
+
+}
+
+header ul#gnb li{
+  margin: 20px 0;
+}
+
+header ul#gnb li a{
+  display: inline-block;
+  color: #fff;
+  font-size: 30px;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  transition: 0.3s;
+}
+
+header ul#gnb li.active a:not([href="#main"]){
+  color: #E11451;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/*  컨텐츠 _________________________ */
+
+#container{
+  background-color: aquamarine;
+}
+
+.inner{
+  text-align: center;
+}
+
+.inner:not(.first){
+  padding: 130px 0;
+}
+
+.inner h2{
+  font-size: 100px;
+}
+
+.inner p{
+  font-size: 30px;
+}
+
+/* 컨텐츠 0 */
+
+#main{
+  height: 100vh;
+  background: url(../image/패턴2.jpg) no-repeat ;
+  background-size: cover;
+  padding-top: 250px;
+  box-sizing: border-box;
+}
+
+#main > div{
+  width: 1200px;
+  height: inherit;
+  margin: auto;
+}
+#main > div img{
+  width: inherit;
+}
+/* 컨텐츠 - 1 */
+#blank{
+  height: 100vh;
+  background-color: #f6f1eb;
+}
+
+#blank .inner .image{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 50px;
+  margin-top: 50px;
+  width: 800px;
+  margin: auto;
+}
+
+#blank .inner .image div {
+  position: relative;
+}
+
+#blank .inner .image div img{
+  width: 300px;
+}
+
+#blank .inner .image div strong{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
+/* 컨텐츠 - 2 */
+#Neu{
+  height: 100vh;
+}
+
+#Neu .inner div img{
+  width: 500px;
+  height: 400px;
+  margin: 50px 30px;
+}
+
+
+/* 컨텐츠 - 3 */
+#clay{
+  height: 100vh;
+  background-color: #ecf7ff;
+}
+
+#clay .inner div img{
+  width: 500px;
+  height: 200px;
+  margin: 50px 30px;
+}
+
+/* 컨텐츠 - 4 */
+#micro{
+  height: 100vh;
+  background-color: #fff9f1;
+}
+
+#micro .inner div img{
+  width: 500px;
+  margin: 50px 30px;
+}
+
+
+/* 태블릿 ___________________________________________________*/
+
+@media screen and (min-width:780px) and (max-width:1023px){
+
+
+
+  /* 오른쪽 */
+#dot{
+  display: none;
+}
+
+#wrap{
+  display: grid;
+  grid-template-columns: none;
+  grid-template-rows: 150px 1fr;
+  pointer-events: none;
+}
+
+/* 메뉴 */
+
+
+header{
+  text-align: center;
+  width: 100%;
+  height: 150px;
+}
+
+header .fixed{
+  position: initial;
+  width: 780px;
+  display: flex;
+  justify-content: left;
+  margin: 0 10px;
+
+}
+
+header h1{
+  font-size: 24px;
+  margin: 0;
+  color: #444;
+  line-height: 50px;
+}
+
+header h1 mark{
+  font-size: 30px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+header ul#gnb{
+  display: flex;
+}
+
+header ul#gnb li{
+  line-height: 150px;
+  margin-left: 30px;
+}
+
+header ul#gnb li a{
+  font-size: 18px;
+  width: inherit;
+  height: inherit;
+  padding: 0 10px;
+  line-height: 50px;
+  display: inline-block;
+}
+
+
+/* 컨텐츠 */
+
+
+.inner{
+  width: 780px;
+  margin: auto;
+  text-align: center;
+}
+
+.inner:not(.first){
+  padding: 20px 0;
+}
+
+.inner h2{
+  font-size: 100px;
+
+}
+
+.inner p{
+  font-size: 18px;
+}
+
+/* 컨텐츠 0 */
+
+#main{
+  height: auto;
+  background: url(../image/패턴1.jpg);
+  padding-top: 30px;
+}
+
+#main > div{
+  width: 780px;
+  height: 400px;
+  margin: auto;
+  padding-top: 50px;
+  box-sizing: border-box;
+  filter: brightness(2);
+}
+#main > div img{
+  width: inherit;
+}
+
+/* 컨텐츠 - 1 */
+#blank{
+  width: 100%;
+  height: auto;
+  padding-bottom: 30px;
+}
+
+#blank .inner .image{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 50px;
+  margin-top: 50px;
+}
+
+#blank .inner .image div {
+  position: relative;
+}
+
+#blank .inner .image div img{
+  width: 300px;
+}
+
+#blank .inner .image div strong{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
+/* 컨텐츠 - 2 */
+#Neu{
+  width: 100%;
+  height: auto;
+}
+
+#Neu .inner div img{
+  width: 400px;
+  height: 300px;
+  margin: 20px 0px;
+}
+
+/* 컨텐츠 - 3 */
+#clay{
+  width: 100%;
+  height: auto;
+}
+
+#clay .inner div{
+  margin-top: 70px;
+}
+
+#clay .inner div img{
+  width: 500px;
+  height: 200px;
+  margin: 20px 0px;
+}
+
+/* 컨텐츠 - 4 */
+#micro{
+  width: 100%;
+  height: auto;
+}
+
+#micro .inner div img{
+  width: 400px;
+  margin: 20px 0px;
+}
+
+}
+
+
+/*  모바일 ___________________________________________________*/
+
+
+@media screen and (max-width:780px){
+
+  
+  /* 오른쪽 */
+  #dot{
+    display: none;
+  }
+  
+
+  #wrap{
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: 200px 1fr;
+    pointer-events: none;
+  }
+
+  /* 메뉴 */
+  
+  header .fixed {
+    width: 100%;
+    margin: auto;
+    position: relative;
+  }
+
+  header .fixed ul {
+    width: 400px;
+    margin: auto;
+  }
+  
+  header h1{
+    font-size: 26px;
+    line-height: 45px;
+    margin: auto;
+
+  }
+  
+  header h1 mark{
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  #gnb li:not(:first-child){
+    display: inline-block;
+    margin: 0;
+    transform: translateY(-30px);
+    margin-top: 30px;
+  }
+  
+  header ul#gnb li a{
+    display: inline-block;
+    font-size: 16px;
+    line-height: initial;
+    padding: 5px;
+    width: initial;
+    height: initial;
+  }
+
+  /* 컨텐츠 */
+
+
+  .inner{
+    width: 350px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .inner:not(.first){
+    padding: 100px 0;
+  }
+  
+  .inner h2{
+    font-size: 30px;
+    padding-top: 50px;
+  }
+  
+  .inner p{
+    font-size: 15px;
+  }
+  
+
+
+/* 컨텐츠 0 */
+
+#main{
+  height: auto;
+  background: url(../image/패턴3.jpg);
+  padding-top: 30px;
+
+}
+
+#main > div{
+  width: 300px;
+  height: 250px;
+  margin: auto;
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+#main > div img{
+  width: inherit;
+}
+
+/* 컨텐츠 - 1 */
+#blank{
+  height: auto;
+}
+
+#blank.area{
+  padding-bottom: 20px;
+}
+
+#blank .inner .image{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 20px;
+  margin-top: 20px;
+  width: 350px;
+}
+
+#blank .inner .image div {
+  position: relative;
+}
+
+#blank .inner .image div img{
+  width: 150px;
+}
+
+#blank .inner .image div strong{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  font-size: 10px;
+}
+  
+  /* 컨텐츠 - 2 */
+  #Neu{
+    height: auto;
+  }
+  #Neu .inner {
+    padding: 30px 0;
+  }
+  
+  #Neu .inner div img{
+    width: 350px;
+    height: 300px;
+    margin: 50px 30px;
+  }
+  
+  #Neu .inner div img:nth-child(2){
+    display: none;
+  }
+
+  
+  
+  /* 컨텐츠 - 3 */
+  #clay{
+    height: auto;
+  }
+
+  #clay .inner {
+    padding: 30px 0;
+  }
+  
+  #clay .inner div img{
+    width: 350px;
+    height: 150px;
+    margin: 50px 30px;
+  }
+  
+  /* 컨텐츠 - 4 */
+  #micro{
+    height: auto;
+  }
+  
+  #micro .inner {
+    padding: 30px 0;
+  }
+
+  #micro .inner div img{
+    width: 350px;
+    margin: 50px 30px;
+  }
+  
+  #micro .inner div img:last-child{
+    display: none;
+  }
+  
+  .inner div.img{
+    margin-left: -30px;
+  }
+
+}
